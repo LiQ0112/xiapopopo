@@ -1,0 +1,10 @@
+.header{
+    background-color:greenyellow;
+    height:50px;
+    width:100%;
+}
+
+.header>p{
+    font-size:24px;
+    color:red;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .header{
+            width:100%;
+            height: 60px;
+            background-color: grey;
+        }
+    </style>
+    <script src="/static/kindeditor/kindeditor-all-min.js"></script>
+    <script charset="utf-8" src="/static/kindeditor/lang/zh-CN.js"></script>
+    <script src="/static/jquery-3.3.1.js"></script>
+</head>
+<body>
+<div class="header">
+
+</div>
+
+<h3>添加文章</h3>
+<label for="">
+    <textarea name="" id="article-content" cols="30" rows="10"></textarea>
+</label>
+
+
+<script>
+        KindEditor.ready(function(K) {
+                window.editor = K.create('#article-content',{
+                   uploadJson:"/upload/",
+                    filePostName:"upload_img",
+                    extraFileUploadParams:{
+                       csrfmiddlewaretoken:$("[name='csrfmiddlewaretoken']").val()
+                    },
+                });
+        });
+</script>
+</body>
+</html>
